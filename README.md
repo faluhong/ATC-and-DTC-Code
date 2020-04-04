@@ -7,7 +7,7 @@ Codes of DTC models include:
 (4) DTC_GEM.py is the example code of GEM-type models (including GEM-eta and GEM-sigma models).
 
 Codes of DTC models include:
-
+ 
 
 
 Representative references
