@@ -7,9 +7,9 @@ Codes of DTC models include:
 (4) DTC_GEM.py is the example code of GEM-type models (including GEM-eta and GEM-sigma models).  
 
 Codes of DTC models include:
- 
-
-
+   
+   
+   
 Representative references  
 About GOT01, GOT09, and GOT09-dT-tao models  
 (1) Göttsche, F. M., Olesen, F. S. (2001). Modelling of diurnal cycles of brightness temperature extracted from METEOSAT data. Remote Sensing of Environment, 76(3), 337-348.   
@@ -24,7 +24,7 @@ About GEM-type models
 (4) Zhan, W., Zhou, J., Ju, W., Li, M., Sandholt, I., Voogt, J., & Yu, C. (2014). Remotely sensed soil temperatures beneath snow-free skin-surface using thermal observations from tandem polar-orbiting satellites: An analytical three-time-scale model. Remote sensing of environment, 143, 1-14.  
 (5) Hong, F., Zhan, W., Göttsche, F.-M., Liu, Z., Zhou, J., Huang, F., Lai, J., Li, M. (2018). Comprehensive assessment of four-parameter diurnal land surface temperature cycle models under clear-sky. ISPRS Journal of Photogrammetry and Remote Sensing, 142, 190-204.   
 
-About ATC model
-(1) Bechtel, B. (2012). Robustness of annual cycle parameters to characterize the urban thermal landscapes. IEEE Geoscience and Remote Sensing Letters, 9(5), 876-880.  
-(2) Zou, Z., Zhan, W., Liu, Z., Bechtel, B., Gao, L., Hong, F., ... & Lai, J. (2018). Enhanced modeling of annual temperature cycles with temporally discrete remotely sensed thermal observations. Remote Sensing, 10(4), 650.  
-(3) Liu, Z., Zhan, W., Lai, J., Hong, F., Quan, J., Bechtel, B., ... & Zou, Z. (2019). Balancing prediction accuracy and generalization ability: A hybrid framework for modelling the annual dynamics of satellite-derived land surface temperatures. ISPRS journal of photogrammetry and remote sensing, 151, 189-206.  
+About ATC model  
+(1) Bechtel, B. (2012). Robustness of annual cycle parameters to characterize the urban thermal landscapes. IEEE Geoscience and Remote Sensing Letters, 9(5), 876-880.    
+(2) Zou, Z., Zhan, W., Liu, Z., Bechtel, B., Gao, L., Hong, F., ... & Lai, J. (2018). Enhanced modeling of annual temperature cycles with temporally discrete remotely sensed thermal observations. Remote Sensing, 10(4), 650.    
+(3) Liu, Z., Zhan, W., Lai, J., Hong, F., Quan, J., Bechtel, B., ... & Zou, Z. (2019). Balancing prediction accuracy and generalization ability: A hybrid framework for modelling the annual dynamics of satellite-derived land surface temperatures. ISPRS journal of photogrammetry and remote sensing, 151, 189-206.    
