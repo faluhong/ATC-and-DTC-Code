@@ -6,7 +6,8 @@ Codes of DTC models include:
 (3) DTC_GOT09_dT_tao.py is the example code of GOT09-dT-tao model (the recommended four-parameters DTC models), which is applicable for MODIS data.  
 (4) DTC_GEM.py is the example code of GEM-type models (including GEM-eta and GEM-sigma models).  
 
-Codes of DTC models include:
+Codes of ATC models include:
+
    
    
    
