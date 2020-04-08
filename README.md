@@ -10,7 +10,7 @@ Codes of ATC models include:
 (1) ATC_Enhance.py is the example code of Enhanced ATC model, which is modified from Zou et al.(2018).
 (2) Example_ATC_data.xlsx is the example data for the Enhance ATC model.
 
-For any questions, feel free to contact hongfalu@foxmail.com 
+For any questions, feel free to contact Mr. Falu Hong (hongfalu@foxmail.com)
    
    
 Representative references  
