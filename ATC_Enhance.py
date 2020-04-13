@@ -29,6 +29,9 @@ ExcelFile_FileName=ExcelFile_Path+'\\'+'Example_ATC_data.xlsx'
 ExcelFile = pd.ExcelFile(ExcelFile_FileName)
 ExcelSheet=ExcelFile.parse('Day')
 
+# Example for the nighttime
+# ExcelSheet=ExcelFile.parse('Night')
+
 DOY=ExcelSheet['DOY'].values
 LenDay=len(DOY)
 
@@ -52,11 +55,8 @@ LST_OriATC=ATC_Original(DOY,popt_ori[0],popt_ori[1],popt_ori[2])
 
 # Modelling with enhanced ATC model
 # First step: calculating the DeltaTemperature
-p0_OriATC = [np.nanmean(AirTemperatureAll), np.nanmax(AirTemperatureAll) - np.nanmin(AirTemperatureAll), 1.5 * pi]
-popt_ori, pcov = curve_fit(ATC_Original, DOY, AirTemperatureAll, p0_OriATC)
-AirTemperature_Ori_ATC=ATC_Original(DOY,popt_ori[0],popt_ori[1],popt_ori[2])
 
-DeltaTemperature=AirTemperatureAll-AirTemperature_Ori_ATC
+DeltaTemperature= AirTemperatureAll - LST_OriATC
 
 # Second step: solving the parameters of enhanced ATC model
 Xdata_Mask = np.vstack([DOY[ClearMask], DeltaTemperature[ClearMask]])
