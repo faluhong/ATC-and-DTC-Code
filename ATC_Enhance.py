@@ -6,6 +6,7 @@ from pandas import *
 import os
 pi=np.pi
 
+# This is the example of ATCE model writing with Python 3.7
 
 # Original ATC model with single sinusoidal function
 def ATC_Original(Day,*param):
