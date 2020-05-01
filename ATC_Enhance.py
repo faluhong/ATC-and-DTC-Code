@@ -6,7 +6,6 @@ from pandas import *
 import os
 pi=np.pi
 
-# This is the example of ATCE model writing with Python 3.7
 
 # Original ATC model with single sinusoidal function
 def ATC_Original(Day,*param):
@@ -51,13 +50,15 @@ AirTemperatureAll= ExcelSheet['Air_temperature_Obs']
 # Modelling with original ATC model
 p0_OriATC = [np.nanmean(LST_Cloud_free), np.nanmax(LST_Cloud_free) - np.nanmin(LST_Cloud_free), 1.5 * pi]
 popt_ori, pcov = curve_fit(ATC_Original, DOY[ClearMask], LST_Cloud_free, p0_OriATC)
-LST_OriATC=ATC_Original(DOY,popt_ori[0],popt_ori[1],popt_ori[2])
+LST_OriATC=ATC_Original(DOY, popt_ori[0], popt_ori[1], popt_ori[2])
 
 
 # Modelling with enhanced ATC model
 # First step: calculating the DeltaTemperature
-
-DeltaTemperature= AirTemperatureAll - LST_OriATC
+p0_OriATC = [np.nanmean(AirTemperatureAll), np.nanmax(AirTemperatureAll) - np.nanmin(AirTemperatureAll), 1.5 * pi]
+popt_ori, pcov = curve_fit(ATC_Original, DOY, AirTemperatureAll, p0_OriATC)
+AirTemperature_OriATC=ATC_Original(DOY, popt_ori[0], popt_ori[1], popt_ori[2])
+DeltaTemperature= AirTemperatureAll - AirTemperature_OriATC
 
 # Second step: solving the parameters of enhanced ATC model
 Xdata_Mask = np.vstack([DOY[ClearMask], DeltaTemperature[ClearMask]])
@@ -71,8 +72,8 @@ LST_EnhanceATC = ATC_enhance(Xdata, popt_enhance[0], popt_enhance[1], popt_enhan
 
 # Error printing
 print('Error of original ATC model')
-print('Bias:',np.nanmean(LST_OriATC[~ClearMask]-LST_Under_Cloud))
-print('MAE:',np.nanmean(np.abs(LST_OriATC[~ClearMask] - LST_Under_Cloud)))
+print('Bias:', np.nanmean(LST_OriATC[~ClearMask] - LST_Under_Cloud))
+print('MAE:', np.nanmean(np.abs(LST_OriATC[~ClearMask] - LST_Under_Cloud)))
 
 print('Error of Enhanced ATC model')
 print('Bias:',np.nanmean(LST_EnhanceATC[~ClearMask] - LST_Under_Cloud))
@@ -81,7 +82,7 @@ print('MAE:',np.nanmean(np.abs(LST_EnhanceATC[~ClearMask] - LST_Under_Cloud)))
 # Results plotting
 plt.plot(DOY[ClearMask], LST_Cloud_free, '^', color='blue', label='Cloud-free LSTs')
 plt.plot(DOY[~ClearMask], LST_Under_Cloud, '^', color='green', label='Under-cloud LSTs')
-plt.plot(DOY,LST_OriATC,'dodgerblue',label='Original ATC modelling results')
+plt.plot(DOY, LST_OriATC, 'dodgerblue', label='Original ATC modelling results')
 plt.plot(DOY,AirTemperatureAll,'dimgrey',label='Air temperature')
 plt.plot(DOY,LST_EnhanceATC,'r',label='Enhanced ATC modelling results')
 plt.legend(loc='best')
