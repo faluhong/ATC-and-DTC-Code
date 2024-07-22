@@ -27,24 +27,24 @@ ExcelFile_Path=os.getcwd()
 ExcelFile_FileName=ExcelFile_Path+'\\'+'Example_ATC_data.xlsx'
 
 ExcelFile = pd.ExcelFile(ExcelFile_FileName)
-ExcelSheet=ExcelFile.parse('Day')
+ExcelSheet = ExcelFile.parse('Day')
 
 # Example for the nighttime
 # ExcelSheet=ExcelFile.parse('Night')
 
-DOY=ExcelSheet['DOY'].values
-LenDay=len(DOY)
+DOY = ExcelSheet['DOY'].values
+LenDay = len(DOY)
 
-ClearMask= ExcelSheet['Cloud_free_Flag'].values
+ClearMask = ExcelSheet['Cloud_free_Flag'].values
 
 LSTAll= ExcelSheet['LST_Obs']
 # Cloud-free LSTs are used to drive the ATC model
-LST_Cloud_free=LSTAll[ClearMask]
+LST_Cloud_free = LSTAll[ClearMask]
 # Under-cloud LSTs are used to evaluate the accuracy of ATC model
-LST_Under_Cloud=LSTAll[~ClearMask]
+LST_Under_Cloud = LSTAll[~ClearMask]
 
 # Air temperature cloud be obtained from in-situ measurements or reanalysis data
-AirTemperatureAll= ExcelSheet['Air_temperature_Obs']
+AirTemperatureAll = ExcelSheet['Air_temperature_Obs']
 
 
 # Modelling with original ATC model
