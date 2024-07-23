@@ -47,6 +47,13 @@ def GEM_eta(time, *param):
 
 
 def GEM_sigma(time, *param):
+    """
+        Structure of GEM-sigma model
+
+    :param time: time of the day, unit is second
+    :param param:
+    :return:
+    """
 
     # parameter of GEM-sigma model
     P, T_Ave, h1, sigma = param[0], param[1], param[2], param[3]
@@ -116,10 +123,10 @@ if __name__ == "__main__":
     # DTC model starts from the sunrise to the next sunrise, the values greater than 24 refer to the time in the next day
     time_dtc_full = np.arange(4.75, 28.5, 1)
     temperature_full = np.array(object=[283, 286, 290, 295, 301, 306, 309,
-                                       313, 314, 314, 312, 309, 305, 301,
-                                       297, 294, 293, 291, 290, 288, 287,
-                                       286, 285, 284],
-                               dtype=float)
+                                        313, 314, 314, 312, 309, 305, 301,
+                                        297, 294, 293, 291, 290, 288, 287,
+                                        286, 285, 284],
+                                dtype=float)
 
     time_dtc = np.array([10.75, 13.75, 22.75, 25.75])
     temperature_dtc = np.array([309, 314, 290, 286], dtype=float)
